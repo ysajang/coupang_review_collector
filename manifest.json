@@ -1,0 +1,41 @@
+{
+    "manifest_version": 3,
+    "name": "Coupang Review Collector",
+    "version": "1.0.0",
+    "description": "쿠팡 상품 리뷰를 수집하고 분석하는 확장 프로그램",
+    "permissions": [
+        "storage",
+        "activeTab",
+        "scripting"
+    ],
+    "host_permissions": [
+        "https://www.coupang.com/*"
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_title": "리뷰 수집기",
+        "default_icon": {
+            "16": "coupang_logo.png",
+            "32": "coupang_logo.png",
+            "48": "coupang_logo.png",
+            "128": "coupang_logo.png"
+        }
+    },
+    "icons": {
+        "16": "coupang_logo.png",
+        "32": "coupang_logo.png",
+        "48": "coupang_logo.png",
+        "128": "coupang_logo.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.coupang.com/*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_idle"
+        }
+    ]
+}
